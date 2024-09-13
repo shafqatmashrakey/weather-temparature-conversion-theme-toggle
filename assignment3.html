@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="author" content="Shafqat Mashrakey" />
+  <title>Presentation Template</title>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="scripts/slidy.css" /> <!-- http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css -->
+  <script src="scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script> <!-- http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js-->
+  <script src="scripts/jquery-3.3.1.min.js"
+    charset="utf-8" type="text/javascript"></script> <!-- https://code.jquery.com/jquery-3.3.1.min.js -->
+  <script type="text/javascript" src="scripts/qrcode.js"></script>
+</head>
+<style>
+
+  /* two-colomn layout */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .right-side-image {
+    float: right;
+    width: 300px;
+    border: 0px solid #004480;
+    padding: 10px;
+  }
+
+  /* global properties to apply to all images */
+  .img {
+    float: left;
+  }
+
+  /* qrcode generator image size */
+  #qrcode {
+    width:160px;
+    height:160px;
+    margin-top:15px;
+  }
+  .three_images
+  {
+    display: flex;
+  }
+  .image1
+  {
+    border: 2px solid#004480;
+  
+  }
+  .image2
+  {
+    border: 2px solid rebeccapurple;
+
+  }
+  .image3
+  {
+    border: 2px solid black;
+
+  }
+  .image4
+  {
+    backdrop-filter: 2px solid rgba(128, 126, 126, 0.466) ;
+  }
+  .column
+  {
+    flex: 33.33%;
+    padding: 5px;
+  }
+  /* email link */
+  a.email:link {color:#eeff00;}
+  a.email:hover {color:#ff00ee; background:#66ff66;}
+</style>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Presentation <br><font color = "#000080"> Assignment 3 </font></h1>
+  <p class="author">Shafqat Mashrakey</p>
+  <p class="date">Computer Science Department <br><font color = "#8080FF" style="text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Southern Connecticut State University</font></p>
+  <button id="view-fullscreen">[Fullscreen]</button>
+  <div class="three_images">
+    <div class="image1 column">
+      <img src="./images/scsu-logo-compact-blue.png" alt="scsu logo" style="width: 100%">
+      <p>this is scsu image</p>
+      <p>
+        to find more about this <a href="https://www.stcloudstate.edu/its/services/web-app/default.aspx" target="_blank"> click here</a>
+      </p>
+    </div>
+    <div class="image2 column">
+      <p>computer logo</p>
+      <img src="./images/computer-repair-logo-template-computer-pixels-logo-software-development-design-free-vector.png" alt="computer logo" style="width: 50%"></div>
+    <div class="image3 column">
+      <p>hacker man logo</p>
+      <img src="./images/istockphoto-911660906-612x612.png" alt="hacker man" style="width: 50%"></div>
+  </div>
+  <script type="text/javascript">
+    (function () {
+        var viewFullScreen = document.getElementById("view-fullscreen");
+        if (viewFullScreen) {
+            viewFullScreen.addEventListener("click", function () {
+                var docElm = document.documentElement;
+                if (docElm.requestFullscreen) {
+                    docElm.requestFullscreen();
+                }
+                else if (docElm.msRequestFullscreen) {
+                    docElm = document.body; //overwrite the element (for IE)
+                    docElm.msRequestFullscreen();
+                }
+                else if (docElm.mozRequestFullScreen) {
+                    docElm.mozRequestFullScreen();
+                }
+                else if (docElm.webkitRequestFullScreen) {
+                    docElm.webkitRequestFullScreen();
+                }
+            }, false);
+        }
+
+        var cancelFullScreen = document.getElementById("cancel-fullscreen");
+        if (cancelFullScreen) {
+            cancelFullScreen.addEventListener("click", function () {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+                else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                }
+                else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                }
+            }, false);
+        }
+
+        var fullscreenState = document.getElementById("fullscreen-state");
+        if (fullscreenState) {
+            document.addEventListener("fullscreenchange", function () {
+                fullscreenState.innerHTML = (document.fullscreenElement)? "" : "not ";
+            }, false);
+
+            document.addEventListener("msfullscreenchange", function () {
+                fullscreenState.innerHTML = (document.msFullscreenElement)? "" : "not ";
+            }, false);
+
+            document.addEventListener("mozfullscreenchange", function () {
+                fullscreenState.innerHTML = (document.mozFullScreen)? "" : "not ";
+            }, false);
+
+            document.addEventListener("webkitfullscreenchange", function () {
+                fullscreenState.innerHTML = (document.webkitIsFullScreen)? "" : "not ";
+            }, false);
+        }
+
+    })();
+    </script>
+</div>
+<div class="section slide level1" id="this">
+ <div style="display: grid; grid-template-columns: auto auto;">
+  <img src="./images/weather.png" alt="weather logo" style="width: 50%">
+  <head>
+    <link rel="stylesheet" href="light-theme.css" id="light-theme">
+    <link rel="stylesheet" href="dark-theme.css" id="dark-theme" disabled>
+  </head>
+</div>
+  <body>
+    <button id="theme-toggle">Toggle Theme</button>
+  </body>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const lightTheme = document.getElementById('light-theme');
+    const darkTheme = document.getElementById('dark-theme');
+    toggle.addEventListener('click', function () {
+      if (lightTheme.disabled) {
+        lightTheme.disabled = false;
+        darkTheme.disabled = true;
+      } else {
+        lightTheme.disabled = true;
+        darkTheme.disabled = false;
+      }
+    });
+  </script>
+  <head>
+    <title>Temperature Conversion</title>
+  </head>
+  <body>
+    <h1>Temperature Conversion</h1><br>
+    <p>Input the temperature in Fahrenheit:</p>
+    <input type="text" id="fahrenheitInput">
+    <button onclick="convertTemperature()">Convert</button>
+    <p id="result"></p>
+    <script>
+      function convertTemperature() {
+        var fahrenheit = document.getElementById("fahrenheitInput").value;
+        var celsius = (fahrenheit - 32) * (5 / 9);
+        document.getElementById("result").innerHTML = fahrenheit + "°F = " + celsius.toFixed(2) + "°C";
+      }
+    </script>
+  </body>
+  </html>
+</div>
+<div class="section slide level1" id="alternatives">
+  <h1><i><u>How did I prepare a web presentation?</u></i></h1>
+  <ol class="incremental" style="list-style-type: decimal">
+  <li><p>I chose web hosting server</p></li>
+  <li><p>Created my web presentation by using visual studio code software and google search engine</p></li>
+  <li><p>Published my web presentation by firezilla as  FTP client to transfer my files to server</p></li>
+  <li><p>Tested multiple times before sharing it</p></li>  
+  </ol></li>
+</div>
+<div class="section slide level1" id="this">
+  <h1><i><u> References: </h1></i></u>
+  <ol class="incremental" style="list-style-type: decimal">
+  <li>toggle theme between dark and light 
+    (<a href="https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp"  target=_blank><i>Reference</i></a>)</ul>
+  </li> 
+  <li>Learn CSS position in 9 Minutes
+    (<a href="https://www.youtube.com/watch?v=jx5jmI0UlXU"  target=_blank><i>Reference</i></a>)</ul>
+  </li>
+  <li>Mozilla Developer Network Web forms — Working with user data
+    (<a href=" https://developer.mozilla.org/en-US/docs/Learn/Forms"  target=_blank><i>Reference</i></a>)</ul>
+  </li>
+  </ol> 
+</div>
+<div class="section slide level1" id="part 4">
+  <h1><i><u>The Result</u></i></h1>
+  <ol class="incremental" style="list-style-type: disc">
+    <li>toggle theme between dark and light 
+      (<a href="https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp"  target=_blank><i>Reference</i></a>)</ul>
+    </li>
+    <li>Temperature Converter 
+      (<a href="https://www.w3schools.com/howto/howto_js_temperature_converter.asp"  target=_blank><i>Reference</i></a>)</ul>
+    </li> 
+  </ol> 
+</div> 
+<div class="section slide level1" id="part 5">
+  <b><p><u> 
+    Recommendation to replicate this web page
+  </u>
+  </p>
+  </b>
+  <ol class="incremental" style="list-style-type: disc">
+  <li>
+    Create a css file,make sure to give a body headers and add attributes for light theme in here i used light-theme.css
+  </li>
+  <li>
+    Create a css file,make sure to give a body headers and add attributes for dark theme in here i used dark-theme.css
+  </li>
+  <li>
+    Then,in your HTML file, you can include both of these CSS files and use JavaScript to toggle between them based on the user's preference.
+  </li>
+  <li>
+    Make sure in JavaScript for a click on the "Toggle Theme" button switches the disabled attribute of the two CSS files to show the alternate theme.
+  </li>
+  <li>
+    For temparature  simply follow celsius convertion formula of (fahrenheit - 32) * (5 / 9) where fahrenheit will be input from user and then follow the reference for coding in HTML and to convert to result i put convert button to do the calculation by the formula
+  </li>
+  </ol>
+</div>
+<div class="section slide level1" id="part 6">
+  <b><p><u> 
+    Roles of markup and scripting languages
+  </u>
+  </p>
+  </b>
+  <ol class="incremental" style="list-style-type: disc">
+  <li>
+    In the temperature converter implementation, HTML is used to create the user interface for the application. The HTML code defines the structure and content of the web page, including the input field for the temperature in Fahrenheit, the "Convert" button, and the output display for the temperature in Celsius.
+  
+    head:This section of the HTML code includes information about the page, such as the title of the web page. <br>
+
+    body: This section of the HTML code contains the content of the web page.<br>
+    
+    h1: This tag is used to display the main heading of the page.<br>
+    
+    p: This tag is used to display text content, such as instructions and result output.<br>
+    
+    input: This tag is used to create an input field where the user can enter the temperature in Fahrenheit.<br>
+    
+    Button: This tag is used to create a button that the user can click to trigger the conversion.<br>
+    
+    script: This tag is used to include JavaScript code that handles the temperature conversion and updates the output display on the page.<br>
+    
+  </li>
+  <li>
+    In the temperature converter implementation, CSS is used to define the visual styling and layout of the user interface. The CSS code determines the colors, fonts, sizes, and positions of the various HTML elements used to create the temperature converter.
+  </li>
+  <li>
+    In the temperature converter implementation, JavaScript is used to add interactivity to the user interface by handling the conversion of the temperature from Fahrenheit to Celsius and updating the output display on the page.
+    
+    function convertTemperature(): This function is called when the user clicks the "Convert" button. It gets the user's input from the Fahrenheit input field, calculates the corresponding temperature in Celsius, and updates the output display on the page.<br>
+
+    var fahrenheit = document.getElementById("fahrenheitInput").value;: This line of code gets the value of the Fahrenheit input field.<br>
+    
+    var celsius = (fahrenheit - 32) * (5 / 9); <br> This line of code calculates the corresponding temperature in Celsius using the input value in Fahrenheit.<br>
+    
+    document.getElementById("result").innerHTML = fahrenheit + "°F = " + celsius.toFixed(2) + "°C"; <br> This line of code updates the output display on the page by setting the text content of the "result" element to the converted temperature in Celsius.<br>
+  </li>
+  </ol>
+</div>
+<div class="section slide level1" id="part 6">
+  <h1><u><b>References</b></u></h1>
+ <li> 
+  Tremblay, M. (2020). JavaScript Tutorial: Temperature Converter. Retrieved February 12, 2023, from https://www.tutorialrepublic.com/javascript-tutorial/javascript-temperature-converter.php
+ </li>
+ <li>
+  W3Schools. (2021). How to Create a Dark/Light Mode Switch with CSS and JavaScript. Retrieved February 12, 2023, from https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp <br> 
+  <p>My attached PDF file</p>
+  <iframe src="Shafqat_CSC235_2.17.23.pdf" width="100%" height="600px"></iframe>
+ </li>
+</div>
